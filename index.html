@@ -41,7 +41,6 @@
         <script src="js/proj4leaflet.js"></script>
         <script src="js/leaflet.markercluster.js"></script>
         <script src="js/leaflet-search.js"></script>
-        <script src="data/CURVASDENIVEL10m_0.js"></script>
         <script src="data/CURVASDENIVEL100m_1.js"></script>
         <script src="data/CATASTROUSO_2.js"></script>
         <script src="data/CATASTRONOTHOFAGUS_3.js"></script>
@@ -87,49 +86,6 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        function pop_CURVASDENIVEL10m_0(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">ELEV</th>\
-                        <td>' + (feature.properties['ELEV'] !== null ? autolinker.link(feature.properties['ELEV'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">CUENCA</th>\
-                        <td>' + (feature.properties['CUENCA'] !== null ? autolinker.link(feature.properties['CUENCA'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_CURVASDENIVEL10m_0_0() {
-            return {
-                pane: 'pane_CURVASDENIVEL10m_0',
-                opacity: 1,
-                color: 'rgba(184,184,184,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-        }
-        map.createPane('pane_CURVASDENIVEL10m_0');
-        map.getPane('pane_CURVASDENIVEL10m_0').style.zIndex = 400;
-        map.getPane('pane_CURVASDENIVEL10m_0').style['mix-blend-mode'] = 'normal';
-        var layer_CURVASDENIVEL10m_0 = new L.geoJson(json_CURVASDENIVEL10m_0, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_CURVASDENIVEL10m_0',
-            layerName: 'layer_CURVASDENIVEL10m_0',
-            pane: 'pane_CURVASDENIVEL10m_0',
-            onEachFeature: pop_CURVASDENIVEL10m_0,
-            style: style_CURVASDENIVEL10m_0_0,
-        });
-        bounds_group.addLayer(layer_CURVASDENIVEL10m_0);
         function pop_CURVASDENIVEL100m_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
